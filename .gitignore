@@ -15,6 +15,10 @@ cache/
 # Secrets
 .env
 
+# Model weights (large binaries)
+maya-coder-3b/*.gguf
+maya-coder-3b/checkpoints/
+
 # Training data (generated artifacts)
 *.jsonl
 maya_api_2_raw.json
