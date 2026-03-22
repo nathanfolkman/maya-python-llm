@@ -1,10 +1,30 @@
 [project]
-name = "maya"
+name = "maya-python-llm"
 version = "0.1.0"
-description = "Add your description here"
+description = "Fine-tuning pipeline for a Maya Python API 2.0 code generation LLM"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    # Scraper
     "beautifulsoup4>=4.14.3",
     "requests>=2.32.5",
+    # Synthetic data generation (Gemini teacher model)
+    "google-generativeai>=0.8.0",
+    "google-genai>=1.68.0",
+    "openai>=2.29.0",
+]
+
+[project.optional-dependencies]
+train = [
+    # Fine-tuning (install separately in a CUDA environment)
+    # uv pip install "unsloth[cu124-torch260] @ git+https://github.com/unslothai/unsloth.git"
+    "torch>=2.6.0",
+    "transformers>=4.51.0",
+    "datasets>=3.0.0",
+    "trl>=0.12.0",
+    "peft>=0.14.0",
+    "bitsandbytes>=0.44.0",
+]
+lint = [
+    "ruff>=0.8.0",
 ]

@@ -8,3 +8,13 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Scraper cache (large, regeneratable)
+cache/
+
+# Secrets
+.env
+
+# Training data (generated artifacts)
+*.jsonl
+maya_api_2_raw.json
